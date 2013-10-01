@@ -1,0 +1,9 @@
+*.pyc
+*.egg-info
+*.egg
+.coverage
+.ropeproject
+.venv
+*.sublime-*
+dist
+docs/_build
