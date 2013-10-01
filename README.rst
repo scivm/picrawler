@@ -14,3 +14,4 @@ PiCrawler is a distributed web crawler using PiCloud.
     status code: 200
     content: <!DOCTYPE html>
 
+.. image:: https://travis-ci.org/studio-ousia/picrawler.png?branch=master   :target: https://travis-ci.org/studio-ousia/picrawler
