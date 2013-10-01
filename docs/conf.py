@@ -46,7 +46,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'picrawler'
-copyright = u'2013, Ikuya Yamada'
+copyright = u'2013, Studio Ousia'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
