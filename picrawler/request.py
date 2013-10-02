@@ -67,6 +67,40 @@ class Request(object):
     def id(self):
         return self._id
 
+    @property
+    def url(self):
+        return self._url
+
+    @property
+    def method(self):
+        return self._method
+
+    @property
+    def headers(self):
+        return self._headers
+
+    @property
+    def args(self):
+        return self._args
+
+    @property
+    def success_callback(self):
+        global _success_callbacks
+
+        if self._success_callback_id:
+            return _success_callbacks.get(self._success_callback_id)
+        else:
+            return None
+
+    @property
+    def error_callback(self):
+        global _error_callbacks
+
+        if self._error_callback_id:
+            return _error_callbacks.get(self._error_callback_id)
+        else:
+            return None
+
     def run_callback(self, response):
         global _success_callbacks, _error_callbacks
 

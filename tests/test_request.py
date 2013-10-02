@@ -21,6 +21,34 @@ class TestRequest(object):
         req = Request('http://dummy', 'get')
         ok_(re.match(r'^[0-9a-f]{32}$', req.id))
 
+    def test_url(self):
+        req = Request('http://dummy', 'get')
+        eq_('http://dummy', req.url)
+
+    def test_method(self):
+        req = Request('http://dummy', 'get')
+        eq_('get', req.method)
+
+    def test_headers(self):
+        req = Request('http://dummy', 'get', headers=dict(n='v'))
+        eq_(dict(n='v'), req.headers)
+
+    def test_args(self):
+        req = Request('http://dummy', 'get', args=dict(n='v'))
+        eq_(dict(n='v'), req.args)
+
+    def test_success_callback(self):
+        mock_success_cb = Mock()
+
+        req = Request('http://dummy', success_callback=mock_success_cb)
+        eq_(mock_success_cb, req.success_callback)
+
+    def test_error_callback(self):
+        mock_error_cb = Mock()
+
+        req = Request('http://dummy', error_callback=mock_error_cb)
+        eq_(mock_error_cb, req.error_callback)
+
     def test_run_success_callback(self):
         mock_success_cb = Mock()
 
