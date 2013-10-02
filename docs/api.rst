@@ -4,6 +4,9 @@ API Reference
 .. autoclass:: picrawler.PiCloudConnection
     :inherited-members:
 
+.. autoclass:: picrawler.RTCoreRequest
+    :inherited-members:
+
 .. autoclass:: picrawler.request.Request
     :inherited-members:
 
@@ -14,7 +17,4 @@ API Reference
     :inherited-members:
 
 .. autoclass:: picrawler.response.ErrorResponse
-    :inherited-members:
-
-.. autoclass:: picrawler.rt_cores.RTCoreRequest
     :inherited-members:

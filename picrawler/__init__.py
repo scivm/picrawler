@@ -28,4 +28,5 @@ __copyright__ = 'Copyright 2013 Studio Ousia'
 
 
 from picloud_connection import PiCloudConnection
+from rt_cores import RTCoreRequest
 from request import Request
