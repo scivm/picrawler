@@ -1,7 +1,8 @@
 PiCrawler
 =========
 
-.. image:: https://travis-ci.org/studio-ousia/picrawler.png?branch=master   :target: https://travis-ci.org/studio-ousia/picrawler
+.. image:: https://travis-ci.org/studio-ousia/picrawler.png?branch=master
+    :target: https://travis-ci.org/studio-ousia/picrawler
 
 PiCrawler is a distributed web crawler using PiCloud.
 
