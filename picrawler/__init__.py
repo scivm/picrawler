@@ -22,7 +22,6 @@ Usage:
 """
 
 __title__ = 'picrawler'
-__version__ = '0.0.1'
 __author__ = 'Studio Ousia'
 __license__ = 'Apache 2.0'
 __copyright__ = 'Copyright 2013 Studio Ousia'

@@ -2,16 +2,15 @@
 
 from setuptools import setup, find_packages
 
-import picrawler
-
 setup(
     name='picrawler',
-    version=picrawler.__version__,
     description='A distributed web crawler using PiCloud.',
     author='Studio Ousia',
     author_email='admin@ousia.jp',
+    url='http://github.com/studio-ousia/picrawler',
     packages=find_packages(),
     license=open('LICENSE').read(),
+    include_package_data=True,
     classifiers=(
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
