@@ -11,6 +11,7 @@ setup(
     author='Ikuya Yamada',
     author_email='ikuya@ousia.jp',
     packages=find_packages(),
+    license=open('LICENSE').read(),
     install_requires=[
         'cloud>=2.8',
         'requests',
