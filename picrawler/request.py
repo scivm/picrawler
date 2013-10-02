@@ -25,14 +25,17 @@ class Request(object):
     :param str url: A URL to be fetched.
     :param str method: Target HTTP method.
         ("GET" or "POST" or "PUT" or "DELETE" or "HEAD" or "OPTIONS")
-    :param dict headers: HTTP headers to send. (Default: {})
-    :param dict args: Additional arguments, that are directly passed to
-        `requests <http://docs.python-requests.org>`_. Any arguments that supported in `requests <http://docs.python-requests.org>`_ are supported.
-    :param function success_callback: A function called if the request is
-        successfully completed. A :class:`Response <picrawler.response.Response>`
+    :param dict headers: (optional) HTTP headers to send.
+    :param dict args: (optional) Additional arguments, that are directly passed
+        to `requests <http://docs.python-requests.org>`_. Any arguments that
+        supported in `requests <http://docs.python-requests.org>`_ are supported.
+    :param function success_callback: (optional) A function called if the
+        request is successfully completed.
+        A :class:`Response <picrawler.response.Response>` instance is passed as
+        the first argument.
+    :param function error_callback: (optional) A function called if the request
+        is failed. An :class:`ErrorResponse <picrawler.response.ErrorResponse>`
         instance is passed as the first argument.
-    :param function error_callback: A function called if the request is failed.
-        An :class:`ErrorResponse <picrawler.response.ErrorResponse>` instance is passed as the first argument.
     """
 
     def __init__(self, url, method='get', headers={}, args={},
