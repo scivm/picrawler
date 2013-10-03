@@ -43,11 +43,19 @@ class TestRequest(object):
         req = Request('http://dummy', success_callback=mock_success_cb)
         eq_(mock_success_cb, req.success_callback)
 
+    def test_success_callback_not_specified(self):
+        req = Request('http://dummy')
+        eq_(None, req.success_callback)
+
     def test_error_callback(self):
         mock_error_cb = Mock()
 
         req = Request('http://dummy', error_callback=mock_error_cb)
         eq_(mock_error_cb, req.error_callback)
+
+    def test_error_callback_not_specified(self):
+        req = Request('http://dummy')
+        eq_(None, req.error_callback)
 
     def test_run_success_callback(self):
         mock_success_cb = Mock()
