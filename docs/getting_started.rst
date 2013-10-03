@@ -4,7 +4,7 @@ Getting Started
 PiCloud Setup
 -------------
 
-Before using PiCrawler, it is neccessary to configure the PiCloud API key.
+Before using PiCrawler, it is neccessary to configure API key of PiCloud.
 
 .. code-block:: python
 
@@ -80,7 +80,7 @@ You can also define callbacks to the request.
     >>>
     >>> req = Request('http://en.wikipedia.org/wiki/Star_Wars', 'GET',
     ...               success_callback=lambda resp: logging.info(resp.content),
-    ...               error_callback=lambda resp: logging.exception(resp.exception),
+    ...               error_callback=lambda resp: logging.exception(resp.exception))
     >>>
     >>> with PiCloudConnection() as conn:
     ...     response = conn.send([req])

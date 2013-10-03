@@ -1,7 +1,7 @@
 Installation
 ------------
 
-To install picrawler, simply:
+To install PiCrawler, simply:
 
 .. code-block:: bash
 

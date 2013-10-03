@@ -27,7 +27,7 @@ Using PiCrawler, you can easily implement a distributed web crawler within a few
 Installation
 ------------
 
-To install picrawler, simply:
+To install PiCrawler, simply:
 
 .. code-block:: bash
 
@@ -43,7 +43,7 @@ Alternatively,
 PiCloud Setup
 -------------
 
-Before using PiCrawler, it is neccessary to configure PiCloud API keys.
+Before using PiCrawler, it is neccessary to configure an API key of PiCloud.
 
 .. code-block:: python
     >>> import cloud
@@ -104,7 +104,7 @@ You can also define callbacks to the request.
     >>>
     >>> req = Request('http://en.wikipedia.org/wiki/Star_Wars', 'GET',
     ...               success_callback=lambda resp: logging.info(resp.content),
-    ...               error_callback=lambda resp: logging.exception(resp.exception),
+    ...               error_callback=lambda resp: logging.exception(resp.exception))
     >>>
     >>> with PiCloudConnection() as conn:
     ...     response = conn.send([req])
