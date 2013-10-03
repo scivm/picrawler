@@ -1,15 +1,21 @@
-PiCrawler
-=========
+Getting Started
+===============
 
-.. image:: https://badge.fury.io/py/picrawler.png
-    :target: http://badge.fury.io/py/picrawler
+PiCloud Setup
+-------------
 
-.. image:: https://travis-ci.org/studio-ousia/picrawler.png?branch=master
-    :target: https://travis-ci.org/studio-ousia/picrawler
+Before using PiCrawler, it is neccessary to configure the PiCloud API key.
 
-PiCrawler is a distributed web crawler using PiCloud.
+.. code-block:: python
 
-Using PiCrawler, you can easily implement a distributed web crawler within a few lines of code.
+    >>> import cloud
+    >>> cloud.setkey(API_KEY, API_SECRETKEY)
+
+You can obtain an API key by signing up on `PiCloud <http://www.picloud.com/>`_.
+
+
+Basic Usage
+-----------
 
 .. code-block:: python
 
@@ -24,42 +30,10 @@ Using PiCrawler, you can easily implement a distributed web crawler within a few
     content: <!DOCTYPE html>
 
 
-Installation
-------------
-
-To install picrawler, simply:
-
-.. code-block:: bash
-
-    $ pip install picrawler
-
-Alternatively,
-
-.. code-block:: bash
-
-    $ easy_install picrawler
-
-
-PiCloud Setup
--------------
-
-Before using PiCrawler, it is neccessary to configure PiCloud API keys.
-
-.. code-block:: python
-    >>> import cloud
-    >>> cloud.setkey(API_KEY, API_SECRETKEY)
-
-You can obtain an API key by signing up on `PiCloud <http://www.picloud.com/>`_.
-
-
 Using Real-time Cores
 ---------------------
 
-PiCloud enables you to reserve your exclusive computational resources by requesting `real-time cores <http://docs.picloud.com/realtime_cores.html>`_.
-
-PiCrawler provides a thin wrapper class for requesting the cores.
-
-NOTE: *s1 core* is the most suitable for crawling tasks, because PiCloud ensures that each *s1 core* has a unique IP address.
+PiCloud enables you to reserve your exclusive computational resources by requesting `real-time cores <http://docs.picloud.com/realtime_cores.html>`_. PiCrawler provides a thin wrapper class for this.
 
 
 .. code-block:: python
@@ -69,11 +43,13 @@ NOTE: *s1 core* is the most suitable for crawling tasks, because PiCloud ensures
     >>> with RTCoreRequest(core_type='s1', num_cores=10):
     ...     pass
 
+.. note::
+    *s1 core* is the most suitable for crawling tasks, because PiCloud ensures that each *s1 core* has a unique IP address.
 
 Customizing Requests
 --------------------
 
-You can easily customize the request headers and other internal behaviors by using Request instances instead of raw URL strings.
+You can easily customize the request headers and other internal behaviors by using :class:`Request <picrawler.request.Request>` instances instead of raw URL strings.
 Since PiCrawler internally uses `Python requests <http://docs.python-requests.org/en/latest/>`_, it supports all arguments that are supported in Python requests.
 
 .. code-block:: python
@@ -108,9 +84,3 @@ You can also define callbacks to the request.
     >>>
     >>> with PiCloudConnection() as conn:
     ...     response = conn.send([req])
-
-
-Documentation
--------------
-
-Documentation is available at http://picrawler.readthedocs.org/.
