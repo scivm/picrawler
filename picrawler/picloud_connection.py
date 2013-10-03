@@ -144,6 +144,7 @@ class PiCloudConnection(object):
     def _loop(self):
         gathered_responses = []
 
+        c = 0
         while True:
             # get the results
             responses = self._result_queue.pop(timeout=0)
@@ -155,8 +156,10 @@ class PiCloudConnection(object):
                 gathered_responses += responses
 
             # break the loop if completed
-            if self._requests_completed():
+            if c % 10 == 0 and self._requests_completed():
                 break
+
+            c += 1
 
         return gathered_responses
 
