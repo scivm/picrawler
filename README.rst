@@ -46,6 +46,7 @@ PiCloud Setup
 Before using PiCrawler, it is neccessary to configure an API key of PiCloud.
 
 .. code-block:: python
+
     >>> import cloud
     >>> cloud.setkey(API_KEY, API_SECRETKEY)
 
