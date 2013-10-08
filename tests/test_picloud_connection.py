@@ -121,7 +121,7 @@ class TestPiCloudConnection(object):
         mock_result_queue = Mock()
         result1 = Mock()
         result2 = Mock()
-        mock_result_queue.pop.side_effect = [[result1], [result2]] + [None] * 9
+        mock_result_queue.pop.side_effect = [[result1], [result2]] + [None] * 2
         conn._result_queue = mock_result_queue
 
         ret = conn._loop()

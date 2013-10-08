@@ -156,7 +156,7 @@ class PiCloudConnection(object):
                 gathered_responses += responses
 
             # break the loop if completed
-            if c % 10 == 0 and self._requests_completed():
+            if c % 3 == 0 and self._requests_completed():
                 break
 
             c += 1
